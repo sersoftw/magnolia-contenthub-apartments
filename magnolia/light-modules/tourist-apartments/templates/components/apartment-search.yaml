@@ -1,0 +1,4 @@
+title: Buscador de apartamentos
+renderType: freemarker
+templateScript: /tourist-apartments/templates/components/apartment-search.ftl
+dialog: tourist-apartments:components/apartment-search

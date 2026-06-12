@@ -1,0 +1,13 @@
+label: Página listado de apartamentos
+form:
+  properties:
+    title:
+      $type: textField
+      label: Título de página
+      required: true
+    heading:
+      $type: textField
+      label: Encabezado
+    intro:
+      $type: richTextField
+      label: Introducción

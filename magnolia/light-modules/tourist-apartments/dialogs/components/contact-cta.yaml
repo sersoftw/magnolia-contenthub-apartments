@@ -1,0 +1,18 @@
+label: CTA de contacto
+form:
+  properties:
+    eyebrow:
+      $type: textField
+      label: Etiqueta
+    heading:
+      $type: textField
+      label: Título
+    description:
+      $type: richTextField
+      label: Descripción
+    buttonText:
+      $type: textField
+      label: Texto del botón
+    buttonUrl:
+      $type: textField
+      label: URL del botón

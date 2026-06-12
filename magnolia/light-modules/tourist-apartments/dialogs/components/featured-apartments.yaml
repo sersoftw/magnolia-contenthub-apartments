@@ -1,0 +1,12 @@
+label: Apartamentos destacados
+form:
+  properties:
+    eyebrow:
+      $type: textField
+      label: Etiqueta
+    heading:
+      $type: textField
+      label: Título
+    description:
+      $type: richTextField
+      label: Descripción

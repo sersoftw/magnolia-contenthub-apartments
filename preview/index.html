@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Demo visual de Magnolia ContentHub Apartments: CMS headless para apartamentos turísticos." />
+  <title>Magnolia ContentHub Apartments</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">Magnolia ContentHub</a>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#apartamentos">Apartamentos</a></li>
+        <li><a href="#arquitectura">Arquitectura</a></li>
+        <li><a href="#migracion">Migración</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow">CMS empresarial · Java · Headless</p>
+        <h1>Gestión de apartamentos turísticos con Magnolia CMS</h1>
+        <p>
+          Proyecto de portfolio orientado a ofertas que solicitan Magnolia 6.2 + Java 11 y Magnolia 6.4 + Java 21.
+          Incluye light module, componentes editables, preview visual, API Java y guía de migración.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apartamentos">Ver demo</a>
+          <a class="btn btn-secondary" href="#arquitectura">Arquitectura</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Resumen técnico del proyecto">
+        <span class="hero-card-label">Stack principal</span>
+        <strong>Magnolia + Java</strong>
+        <ul>
+          <li>Light module YAML</li>
+          <li>FreeMarker templates</li>
+          <li>Java 11 / Java 21 APIs</li>
+          <li>Documentación de migración</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section stats" aria-label="Indicadores del proyecto">
+      <article>
+        <strong>6+</strong>
+        <span>componentes CMS</span>
+      </article>
+      <article>
+        <strong>2</strong>
+        <span>versiones Java</span>
+      </article>
+      <article>
+        <strong>Headless</strong>
+        <span>contenido preparado para API</span>
+      </article>
+      <article>
+        <strong>Portfolio</strong>
+        <span>listo para GitHub</span>
+      </article>
+    </section>
+
+    <section class="section filters" id="apartamentos">
+      <div class="section-heading">
+        <p class="eyebrow">Contenido gestionable</p>
+        <h2>Apartamentos destacados</h2>
+        <p>Estos datos simulan contenido que una empresa editaría desde Magnolia y una web/app consumiría como contenido headless.</p>
+      </div>
+      <div class="filter-bar" role="search">
+        <label for="cityFilter">Filtrar por ciudad</label>
+        <select id="cityFilter">
+          <option value="all">Todas</option>
+          <option value="Sevilla">Sevilla</option>
+          <option value="Málaga">Málaga</option>
+          <option value="Cádiz">Cádiz</option>
+        </select>
+      </div>
+      <div class="apartment-grid" id="apartmentGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section architecture" id="arquitectura">
+      <div class="section-heading">
+        <p class="eyebrow">Arquitectura</p>
+        <h2>Separación entre CMS, API y experiencia digital</h2>
+      </div>
+      <div class="architecture-grid">
+        <article class="architecture-card">
+          <span>01</span>
+          <h3>Magnolia CMS</h3>
+          <p>El equipo de negocio crea páginas, edita componentes y mantiene contenido mediante diálogos YAML y plantillas FreeMarker.</p>
+        </article>
+        <article class="architecture-card">
+          <span>02</span>
+          <h3>Content API</h3>
+          <p>La capa Java expone apartamentos en JSON para web, mobile o integraciones externas.</p>
+        </article>
+        <article class="architecture-card">
+          <span>03</span>
+          <h3>Frontend</h3>
+          <p>La preview visual permite mostrar el proyecto en GitHub Pages sin depender de una instalación local de Magnolia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section migration" id="migracion">
+      <div>
+        <p class="eyebrow">Migración técnica</p>
+        <h2>De Magnolia 6.2 + Java 11 a Magnolia 6.4 + Java 21</h2>
+        <p>
+          El repositorio incluye una guía de migración con riesgos, checklist, pruebas recomendadas y criterios de validación para explicar la transición en entrevista técnica.
+        </p>
+      </div>
+      <ul class="timeline">
+        <li><strong>Fase 1:</strong> inventario de módulos, plantillas y dependencias.</li>
+        <li><strong>Fase 2:</strong> compatibilidad Java y revisión de código.</li>
+        <li><strong>Fase 3:</strong> validación en Magnolia 6.4 / Jakarta EE.</li>
+        <li><strong>Fase 4:</strong> pruebas funcionales y plan de rollback.</li>
+      </ul>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <p class="eyebrow">Portfolio profesional</p>
+      <h2>Proyecto creado para candidaturas reales</h2>
+      <p>
+        Este proyecto está pensado para acompañar una candidatura junior donde se valora Java, CMS empresarial, documentación técnica y capacidad de aprendizaje.
+      </p>
+      <a class="btn btn-primary" href="../README.md">Ver README del proyecto</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Magnolia ContentHub Apartments · Proyecto portfolio · Sergio Bernal Gálvez</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

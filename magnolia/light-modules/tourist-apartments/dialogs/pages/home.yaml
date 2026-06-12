@@ -1,0 +1,10 @@
+label: Página home
+form:
+  properties:
+    title:
+      $type: textField
+      label: Título de página
+      required: true
+    seoDescription:
+      $type: textField
+      label: Meta descripción

@@ -1,0 +1,16 @@
+title: Listado de apartamentos
+renderType: freemarker
+templateScript: /tourist-apartments/templates/pages/apartment-list.ftl
+dialog: tourist-apartments:pages/apartment-list
+visible: true
+
+areas:
+  main:
+    title: Listado
+    availableComponents:
+      apartmentSearch:
+        id: tourist-apartments:components/apartment-search
+      featuredApartments:
+        id: tourist-apartments:components/featured-apartments
+      contactCta:
+        id: tourist-apartments:components/contact-cta

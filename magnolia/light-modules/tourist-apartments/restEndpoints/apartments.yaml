@@ -1,0 +1,10 @@
+# Endpoint conceptual de delivery de contenido.
+# Debe ajustarse a la edición/módulos REST instalados en Magnolia.
+
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: apartments
+rootPath: /
+nodeTypes:
+  - mgnl:content
+includeSystemProperties: false
+bypassWorkspaceAcls: false

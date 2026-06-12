@@ -1,0 +1,22 @@
+# Configuración conceptual de una content app para gestionar apartamentos.
+# En un proyecto real se ajustaría al módulo Content Types/Content Apps disponible.
+
+label: Apartamentos
+appClass: info.magnolia.ui.contentapp.ContentApp
+icon: icon-items
+
+subApps:
+  browser:
+    label: Apartamentos
+    workbench:
+      contentViews:
+        tree:
+          columns:
+            name:
+              label: Nombre
+            city:
+              label: Ciudad
+            pricePerNight:
+              label: Precio/noche
+  detail:
+    label: Detalle apartamento

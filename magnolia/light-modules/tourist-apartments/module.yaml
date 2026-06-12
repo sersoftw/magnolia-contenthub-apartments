@@ -1,0 +1,9 @@
+version: 1.0.0
+displayName: Tourist Apartments
+
+# Light module orientado a CMS/headless para apartamentos turísticos.
+# Contiene templates, dialogs, content types, apps y recursos web.
+
+dependencies:
+  core:
+    version: '*'

@@ -1,0 +1,4 @@
+title: Apartamentos destacados
+renderType: freemarker
+templateScript: /tourist-apartments/templates/components/featured-apartments.ftl
+dialog: tourist-apartments:components/featured-apartments

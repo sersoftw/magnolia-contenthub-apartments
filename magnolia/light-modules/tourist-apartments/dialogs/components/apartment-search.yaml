@@ -1,0 +1,13 @@
+label: Buscador de apartamentos
+form:
+  properties:
+    eyebrow:
+      $type: textField
+      label: Etiqueta
+    heading:
+      $type: textField
+      label: Título
+    actionUrl:
+      $type: textField
+      label: URL de búsqueda
+      defaultValue: /apartamentos

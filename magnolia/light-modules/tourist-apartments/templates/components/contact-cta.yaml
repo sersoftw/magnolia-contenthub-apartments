@@ -1,0 +1,4 @@
+title: CTA de contacto
+renderType: freemarker
+templateScript: /tourist-apartments/templates/components/contact-cta.ftl
+dialog: tourist-apartments:components/contact-cta

@@ -1,0 +1,35 @@
+# Definición conceptual de tipo de contenido para apartamentos.
+# Puede adaptarse a la configuración exacta de Magnolia disponible en el entorno.
+
+datasource:
+  workspace: apartments
+  rootPath: /
+
+model:
+  properties:
+    name:
+      type: String
+      label: Nombre
+      required: true
+    slug:
+      type: String
+      label: Slug
+      required: true
+    city:
+      type: String
+      label: Ciudad
+    capacity:
+      type: Long
+      label: Capacidad
+    pricePerNight:
+      type: Long
+      label: Precio por noche
+    description:
+      type: String
+      label: Descripción
+    featured:
+      type: Boolean
+      label: Destacado
+    services:
+      type: String
+      label: Servicios

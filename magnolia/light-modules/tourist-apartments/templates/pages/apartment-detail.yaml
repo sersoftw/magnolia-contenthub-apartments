@@ -1,0 +1,16 @@
+title: Detalle de apartamento
+renderType: freemarker
+templateScript: /tourist-apartments/templates/pages/apartment-detail.ftl
+dialog: tourist-apartments:pages/apartment-detail
+visible: true
+
+areas:
+  main:
+    title: Contenido del apartamento
+    availableComponents:
+      hero:
+        id: tourist-apartments:components/hero
+      amenities:
+        id: tourist-apartments:components/amenities
+      contactCta:
+        id: tourist-apartments:components/contact-cta

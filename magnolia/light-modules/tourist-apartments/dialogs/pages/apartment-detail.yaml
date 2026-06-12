@@ -1,0 +1,11 @@
+label: Página detalle de apartamento
+form:
+  properties:
+    title:
+      $type: textField
+      label: Título de página
+      required: true
+    apartmentId:
+      $type: textField
+      label: ID del apartamento
+      description: Identificador usado para obtener el contenido desde la API o content app.

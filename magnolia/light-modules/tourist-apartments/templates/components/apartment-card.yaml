@@ -1,0 +1,4 @@
+title: Tarjeta de apartamento
+renderType: freemarker
+templateScript: /tourist-apartments/templates/components/apartment-card.ftl
+dialog: tourist-apartments:components/apartment-card

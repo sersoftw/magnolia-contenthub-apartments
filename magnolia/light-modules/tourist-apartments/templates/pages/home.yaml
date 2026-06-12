@@ -1,0 +1,20 @@
+title: Home apartamentos turísticos
+renderType: freemarker
+templateScript: /tourist-apartments/templates/pages/home.ftl
+dialog: tourist-apartments:pages/home
+visible: true
+
+areas:
+  main:
+    title: Contenido principal
+    availableComponents:
+      hero:
+        id: tourist-apartments:components/hero
+      apartmentSearch:
+        id: tourist-apartments:components/apartment-search
+      featuredApartments:
+        id: tourist-apartments:components/featured-apartments
+      amenities:
+        id: tourist-apartments:components/amenities
+      contactCta:
+        id: tourist-apartments:components/contact-cta

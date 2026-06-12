@@ -1,0 +1,16 @@
+label: Tarjeta de apartamento
+form:
+  properties:
+    city:
+      $type: textField
+      label: Ciudad
+    name:
+      $type: textField
+      label: Nombre
+      required: true
+    description:
+      $type: richTextField
+      label: Descripción
+    pricePerNight:
+      $type: textField
+      label: Precio por noche

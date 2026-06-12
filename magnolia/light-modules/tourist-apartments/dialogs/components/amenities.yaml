@@ -1,0 +1,21 @@
+label: Servicios del alojamiento
+form:
+  properties:
+    eyebrow:
+      $type: textField
+      label: Etiqueta
+    heading:
+      $type: textField
+      label: Título
+    serviceOne:
+      $type: textField
+      label: Servicio 1
+    serviceTwo:
+      $type: textField
+      label: Servicio 2
+    serviceThree:
+      $type: textField
+      label: Servicio 3
+    serviceFour:
+      $type: textField
+      label: Servicio 4
