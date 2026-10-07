@@ -1,0 +1,100 @@
+name: ContentHub Java CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-api:
+    name: API Java ${{ matrix.java }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - java: '11'
+            port: '8081'
+          - java: '21'
+            port: '8082'
+
+    defaults:
+      run:
+        working-directory: java/java${{ matrix.java }}-content-api
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Configurar Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      - name: Compilar
+        env:
+          JAVA_RELEASE: ${{ matrix.java }}
+        run: |
+          mkdir -p target/classes
+          find src/main/java -name '*.java' > target/sources.txt
+          javac --release "$JAVA_RELEASE" \
+            -d target/classes @target/sources.txt
+
+      - name: Arrancar y comprobar endpoints
+        env:
+          API_JAVA: ${{ matrix.java }}
+          API_PORT: ${{ matrix.port }}
+        run: |
+          set -euo pipefail
+
+          java -cp target/classes \
+            "com.sersoftw.contenthub.java${API_JAVA}.ContentHubJava${API_JAVA}Application" \
+            > target/server.log 2>&1 &
+
+          api_pid=$!
+          trap 'kill "$api_pid" 2>/dev/null || true' EXIT
+
+          ready=false
+          for attempt in {1..20}; do
+            if curl --fail --silent --max-time 2 \
+              "http://localhost:${API_PORT}/health" \
+              -o target/health.json; then
+              ready=true
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$ready" != "true" ]; then
+            cat target/server.log
+            exit 1
+          fi
+
+          curl --fail --silent --show-error --max-time 5 \
+            "http://localhost:${API_PORT}/api/apartments" \
+            -o target/apartments.json
+
+          python3 - <<'PY'
+          import json
+
+          with open("target/health.json") as file:
+              health = json.load(file)
+          assert health.get("status") == "UP", health
+
+          with open("target/apartments.json") as file:
+              apartments = json.load(file)
+          assert isinstance(apartments, list), "Se esperaba una lista"
+          assert apartments, "El listado de ejemplo está vacío"
+
+          print("Estado UP y listado de apartamentos comprobados.")
+          PY
