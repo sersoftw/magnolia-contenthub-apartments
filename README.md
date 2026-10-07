@@ -1,27 +1,24 @@
 # Magnolia ContentHub Apartments
 
-**Proyecto de portfolio orientado a ofertas que solicitan Magnolia 6.2 + Java 11 y Magnolia 6.4 + Java 21.**
+Proyecto personal de aprendizaje sobre gestión de contenidos
+de apartamentos turísticos, con ejemplos de configuración
+para Magnolia y desarrollo de APIs en Java.
 
-Este repositorio simula un proyecto profesional de CMS empresarial para una empresa de apartamentos turísticos. El objetivo es demostrar conocimientos de Magnolia CMS, arquitectura headless, Java, migración tecnológica y documentación técnica de calidad.
+## Componentes y estado
 
----
+- Módulo de ejemplo para Magnolia con YAML, plantillas FreeMarker,
+  diálogos y recursos web. Pendiente de validar dentro del CMS.
+- Preview independiente en HTML, CSS y JavaScript que carga
+  datos de ejemplo desde un archivo JSON.
+- Dos APIs independientes, orientadas a Java 11 y Java 21.
+  Su conexión con contenido real de Magnolia está pendiente.
+- Documentación de instalación y estudio de migración.
+  No representa una migración ejecutada y validada.
 
-## Resumen del proyecto
+La preview no utiliza Magnolia ni demuestra por sí sola
+el funcionamiento del módulo dentro del CMS.
 
-**Magnolia ContentHub Apartments** permite gestionar contenido de apartamentos turísticos desde Magnolia y consumirlo desde una capa externa tipo headless/API.
-
-Incluye:
-
-- Un **light module de Magnolia** con estructura YAML, FreeMarker, diálogos, componentes, plantillas y recursos web.
-- Una **preview estática** para poder mostrar el resultado visual en GitHub Pages sin instalar Magnolia.
-- Una **API Java 11** compatible con entornos legacy similares a Magnolia 6.2.
-- Una **API Java 21** modernizada para demostrar actualización tecnológica hacia entornos Magnolia 6.4.
-- Documentación profesional de instalación, capturas, arquitectura y migración.
-- Texto listo para añadir al portfolio y a candidaturas de empleo.
-
----
-
-## Tecnologías demostradas
+## Tecnologías y áreas de estudio
 
 | Área | Tecnologías |
 |---|---|
@@ -29,8 +26,8 @@ Incluye:
 | Backend | Java 11, Java 21, HTTP API, JSON |
 | Frontend | HTML5, CSS3, JavaScript |
 | Arquitectura | Headless CMS, separación contenido/presentación, APIs |
-| DevOps/Calidad | GitHub Actions, estructura de repositorio, documentación técnica |
-| Migración | Magnolia 6.2 -> 6.4, Java 11 -> Java 21, Tomcat/Jakarta EE |
+| Documentación | Estructura del proyecto y guías técnicas |
+| Estudio de migración | Magnolia 6.2 a 6.4 y Java 11 a Java 21; pendiente de validación |
 
 ---
 
@@ -47,40 +44,31 @@ magnolia-contenthub-apartments/
 ├── preview/                          # Demo visual para GitHub Pages
 ├── docs/                             # Documentación profesional
 ├── scripts/                          # Scripts de ayuda
-├── .github/workflows/validate.yml    # Workflow de validación
 └── README.md
 ```
 
 ---
 
-## Vista rápida: preview sin instalar Magnolia
+## Ejecutar la preview
 
-La carpeta `preview/` contiene una versión visual para enseñar el proyecto en el portfolio.
-
-### Opción 1: abrir directamente
-
-Abre este archivo en el navegador:
-
-```text
-preview/index.html
-```
-
-### Opción 2: servidor local
-
-Desde la raíz del proyecto:
+Requiere Python 3. Desde la raíz del repositorio:
 
 ```bash
 cd preview
 python -m http.server 8080
 ```
 
-Después abre:
+Abre http://localhost:8080.
 
-```text
-http://localhost:8080
+En Windows, si el comando python no está disponible, utiliza:
+
+```powershell
+py -m http.server 8080
 ```
 
----
+La preview carga `data/apartments.json` mediante fetch.
+Utiliza el servidor local para evitar las restricciones del
+navegador al abrir archivos directamente.
 
 ## Ejecutar la API Java 11
 
@@ -148,30 +136,7 @@ docs/01-instalacion-magnolia.md
 
 ---
 
-## Qué demuestra este proyecto ante una empresa
 
-Este proyecto está diseñado para explicar en entrevista que sabes:
-
-- Analizar una oferta técnica y construir una prueba orientada al puesto.
-- Trabajar con un CMS empresarial basado en módulos y configuración YAML.
-- Separar contenido, presentación y lógica backend.
-- Documentar una migración realista de Java 11 a Java 21.
-- Comprender el impacto de migrar de Magnolia 6.2 a Magnolia 6.4.
-- Crear repositorios profesionales y presentables para selección técnica.
-
----
-
-## Texto corto para el portfolio
-
-> Magnolia ContentHub Apartments es un proyecto de CMS/headless orientado a empresas turísticas. Incluye un light module de Magnolia con plantillas FreeMarker, componentes editables, diálogos YAML y recursos frontend, además de dos APIs Java independientes: una compatible con Java 11 y otra modernizada con Java 21. El proyecto incorpora documentación de arquitectura y una guía de migración desde Magnolia 6.2 + Java 11 hacia Magnolia 6.4 + Java 21.
-
-Más textos listos en:
-
-```text
-docs/04-texto-portfolio.md
-```
-
----
 
 ## Estado del proyecto
 
