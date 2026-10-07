@@ -136,6 +136,19 @@ docs/01-instalacion-magnolia.md
 
 ---
 
+## Comprobaciones automáticas
+
+El workflow `.github/workflows/validate.yml` verifica por separado
+las APIs con Java 11 y Java 21:
+
+- Compilación del código.
+- Arranque del servidor HTTP.
+- Respuesta de `/health` con estado UP.
+- Respuesta de `/api/apartments` con una lista JSON no vacía.
+
+Estas comprobaciones no validan el módulo dentro de Magnolia,
+la integración con el CMS ni una migración entre versiones.
+
 
 
 ## Estado del proyecto
